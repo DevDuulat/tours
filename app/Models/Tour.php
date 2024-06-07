@@ -35,8 +35,9 @@ class Tour extends Model
         return $this->belongsTo(Region::class);
     }
 
-    public function tourPrograms()
+    public function programs()
     {
         return $this->hasMany(TourPrograms::class);
     }
+
 }

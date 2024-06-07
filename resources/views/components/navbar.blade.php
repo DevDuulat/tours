@@ -14,18 +14,11 @@
 
                 <li class="nav-item"><a class="nav-link" href="{{route('tours.index')}}">Туры</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="blog.html">Блог</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('blog')}}">Блог</a></li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Другие</a>
+                <li class="nav-item"><a class="nav-link" href="{{route('about_us')}}">О нас</a></li>
 
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="about-us.html">О нас</a>
-
-                    </div>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('contacts')}}">Контакты</a></li>
             </ul>
         </div>
     </div>

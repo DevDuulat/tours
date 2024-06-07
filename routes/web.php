@@ -25,3 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tour/{id}', [TourController::class, 'show'])->name('tour.details');
 Route::get('/tours', [SiteController::class, 'getAllTours'])->name('tours.index');
 Route::get('/contacts', [SiteController::class, 'getContacts'])->name('contacts');
+Route::get('/blog', [SiteController::class, 'getBlog'])->name('blog');
+Route::get('/about-us', [SiteController::class, 'getAbout'])->name('about_us');
+Route::get('/regions/{region}', [SiteController::class, 'showTours'])->name('region.tours');
+

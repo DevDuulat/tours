@@ -8,9 +8,7 @@
             <div></div>
         </div>
     </div>
-    <header>
-        @include('components.navbar')
-    </header>
+
     <!-- Banner Starts Here -->
     <div class="banner header-text">
         <div class="owl-banner owl-carousel">
@@ -38,7 +36,7 @@
     <div class="container" style="margin-top: 100px">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('storage/' . $tour->image) }}" alt="{{ $tour->title }}" class="img-fluid">
+                <img src="{{ asset('storage/' . $tour->image) }}" alt="{{ $tour->title }}" class="img-fluid tour-main-image">
             </div>
             <div class="col-md-6">
                 <h2>{{ $tour->title }}</h2>
@@ -48,17 +46,45 @@
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="inner-content">
-                        <p>Copyright © 2024 develop by Sanabar: <a href="">saparga.kg</a></p>
-                    </div>
-                </div>
+    <div class="container tour-programs" style="margin-top: 50px">
+        @foreach($tour->programs as $program)
+            <div class="tour-program">
+                <h3>День {{ $program->day }}</h3>
+                <p>{{ $program->description }}</p>
+                @if($program->image)
+                    <img src="{{ asset('storage/' . $program->image) }}" alt="Image for day {{ $program->day }}" class="img-fluid tour-program-image">
+                @endif
             </div>
-        </div>
-    </footer>
+            <hr>
+        @endforeach
+    </div>
 
+    <style>
+        .tour-details-section {
+            background: #f8f9fa;
+        }
+        .tour-program {
+            margin-bottom: 20px;
+        }
+        .tour-program img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .tour-main-image {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 8px;
+        }
+        .tour-programs {
+            margin-top: 50px;
+        }
+        .tour-program img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
 @endsection

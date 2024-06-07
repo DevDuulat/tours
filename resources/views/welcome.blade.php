@@ -72,7 +72,7 @@
                             <div class="down-content">
                                 <a href="{{ route('tour.details', ['id' => $tour->id]) }}"><h4>{{ $tour->title }}</h4></a>
                                 <h6>${{ $tour->price }}</h6>
-                                <p>{{ $tour->description }}</p>
+                                <p>{{ \Illuminate\Support\Str::limit($tour->description, 100) }}</p>
 
                                 <p> {{ $tour->region->name }}
                                 </p>
